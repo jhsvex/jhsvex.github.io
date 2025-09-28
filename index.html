@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="google-site-verification" content="djxl5RzFJdHx4o8E7qDSfAJLa-WNhpZ5fIUtRJsIlw4" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>JHS VEX Robotics</title>
@@ -24,14 +23,7 @@ nav ul{display:flex;gap:.6rem;list-style:none;padding:0;margin:0}
 nav a.link{padding:.55rem .8rem;border-radius:999px;border:1px solid transparent}
 nav a.link:hover{background:rgba(255,255,255,.06);border-color:var(--divider)}
 .active{border-color:var(--gold);background:rgba(212,175,55,.14)}
-.menu-btn{display:none}
-@media (max-width:880px){
-  .menu-btn{display:inline-flex}
-  nav ul{position:fixed;inset:72px 0 auto 0;background:var(--panel);border-bottom:1px solid var(--divider);flex-direction:column;gap:0;padding:.6rem;transform:translateY(-120%);transition:transform .25s ease}
-  nav ul.show{transform:translateY(0)}
-  nav a.link{padding:1rem 1.2rem;border-radius:12px}
-}
-.hero{padding:5rem 0 2.5rem 0}
+.hero{padding:3.8rem 0 2rem 0}
 h1{font-size:clamp(2.1rem,5vw,3.2rem);line-height:1.12;margin:0}
 .lead{font-size:1.05rem;color:var(--muted);max-width:60ch}
 .badge{display:inline-block;font-size:.85rem;font-weight:800;padding:.35rem .6rem;border-radius:999px;background:rgba(212,175,55,.2);color:var(--gold)}
@@ -44,13 +36,14 @@ h1{font-size:clamp(2.1rem,5vw,3.2rem);line-height:1.12;margin:0}
 .card{background:var(--panel);border:1px solid var(--divider);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow)}
 ul.inline{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0;list-style:none}
 ul.inline li{padding:.35rem .6rem;border-radius:999px;border:1px solid var(--divider);color:var(--muted);font-size:.9rem}
-.grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:1rem}
+.grid-2{display:grid;grid-template-columns:1.05fr .95fr;gap:1rem;align-items:center}
 @media (max-width:960px){.grid-2{grid-template-columns:1fr}}
 .btn{display:inline-flex;align-items:center;gap:.5rem;border-radius:999px;padding:.9rem 1.15rem;font-weight:700;background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#1a1a1a;border:0;cursor:pointer;box-shadow:var(--shadow);transition:transform .15s ease,filter .2s ease}
 .btn:hover{transform:translateY(-1px);filter:saturate(1.08)}
 .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--divider);box-shadow:none}
+.figure{border-radius:16px;border:1px solid var(--divider);overflow:hidden}
+.figure img{display:block;width:100%;height:auto}
 footer{padding:3rem 0 4rem 0;border-top:1px solid var(--divider);color:var(--muted)}
-.anchor{scroll-margin-top:88px}
 .small{font-size:.9rem;color:var(--muted)}
 </style>
 </head>
@@ -73,18 +66,23 @@ footer{padding:3rem 0 4rem 0;border-top:1px solid var(--divider);color:var(--mut
 </nav>
 
 <header class="hero">
-  <div class="container">
-    <span class="badge">JHS VEX Robotics</span>
-    <h1>Jordan High School VEX Robotics</h1>
-    <p class="lead">Nine teams. Results that matter. Clear paths to join and contribute.</p>
-    <div class="kpis">
-      <div class="kpi"><div class="v">9</div><div class="t small">teams</div></div>
-      <div class="kpi"><div class="v">UIL 6A</div><div class="t small">state champions</div></div>
-      <div class="kpi"><div class="v">Worlds</div><div class="t small">Z and W qualified</div></div>
+  <div class="container grid-2">
+    <div>
+      <span class="badge">JHS VEX Robotics</span>
+      <h1>Jordan High School VEX Robotics</h1>
+      <p class="lead">Nine teams. Results that matter. Clear paths to join and contribute.</p>
+      <div class="kpis">
+        <div class="kpi"><div class="v">9</div><div class="t small">teams</div></div>
+        <div class="kpi"><div class="v">UIL 6A</div><div class="t small">state champions</div></div>
+        <div class="kpi"><div class="v">Worlds</div><div class="t small">Z and W qualified</div></div>
+      </div>
+      <div style="margin-top:1rem" class="cta">
+        <a href="./teams.html" class="btn">View Teams</a>
+        <a href="./awards.html" class="btn ghost">See Accomplishments</a>
+      </div>
     </div>
-    <div style="margin-top:1rem" class="cta">
-      <a href="./teams.html" class="btn">View Teams</a>
-      <a href="./awards.html" class="btn ghost">See Accomplishments</a>
+    <div class="figure">
+      <img src="assets/images/robot-hero.jpg" alt="Competition robot on field" />
     </div>
   </div>
 </header>
