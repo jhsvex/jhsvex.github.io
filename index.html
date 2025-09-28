@@ -8,47 +8,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
 <style>
-:root{
-  --bg:#0a0a0a;
-  --panel:#101010;
-  --text:#f5f5f5;
-  --muted:#c9c9c9;
-  --divider:rgba(255,255,255,.12);
-  --gold:#d4af37;
-  --gold-2:#f1c232;
-  --shadow:0 8px 24px rgba(0,0,0,.35);
-  --radius:16px
-}
+:root{--bg:#0a0a0a;--panel:#101010;--text:#f5f5f5;--muted:#c9c9c9;--divider:rgba(255,255,255,.12);--gold:#d4af37;--gold-2:#f1c232;--shadow:0 8px 24px rgba(0,0,0,.35);--radius:16px}
 *{box-sizing:border-box}
 html,body{height:100%}
 html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif;
-  background:
-    radial-gradient(1200px 600px at 85% -10%, rgba(212,175,55,.15), transparent 60%),
-    radial-gradient(900px 500px at -10% 20%, rgba(241,194,50,.12), transparent 60%),
-    var(--bg);
-  color:var(--text);
-  line-height:1.6
-}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif;background:radial-gradient(1200px 600px at 85% -10%, rgba(212,175,55,.15), transparent 60%),radial-gradient(900px 500px at -10% 20%, rgba(241,194,50,.12), transparent 60%),var(--bg);color:var(--text);line-height:1.6}
 a{color:inherit;text-decoration:none}
 .container{width:min(1100px,92vw);margin:0 auto}
-nav{
-  position:sticky;top:0;z-index:50;
-  backdrop-filter:saturate(1.2) blur(10px);
-  background:color-mix(in hsl, var(--panel) 85%, transparent);
-  border-bottom:1px solid var(--divider)
-}
+nav{position:sticky;top:0;z-index:50;background:color-mix(in hsl, var(--panel) 85%, transparent);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid var(--divider)}
 .navbar{display:flex;align-items:center;justify-content:space-between;height:72px}
 .brand{display:flex;align-items:center;gap:.8rem;font-weight:800;font-size:1.05rem;letter-spacing:.02em}
-.logo{width:36px;height:36px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#1a1a1a;font-weight:900}
+.brand img{width:36px;height:36px;border-radius:12px;object-fit:cover;background:#222}
 nav ul{display:flex;gap:.6rem;list-style:none;padding:0;margin:0}
 nav a.link{padding:.55rem .8rem;border-radius:999px;border:1px solid transparent}
 nav a.link:hover{background:rgba(255,255,255,.06);border-color:var(--divider)}
-.btn{display:inline-flex;align-items:center;gap:.5rem;border-radius:999px;padding:.9rem 1.15rem;font-weight:700;background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#1a1a1a;border:0;cursor:pointer;box-shadow:var(--shadow);transition:transform .15s ease,filter .2s ease}
-.btn:hover{transform:translateY(-1px);filter:saturate(1.08)}
-.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--divider);box-shadow:none}
+.active{border-color:var(--gold);background:rgba(212,175,55,.14)}
 .menu-btn{display:none}
 @media (max-width:880px){
   .menu-btn{display:inline-flex}
@@ -71,26 +45,28 @@ ul.inline{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0;list-style:no
 ul.inline li{padding:.35rem .6rem;border-radius:999px;border:1px solid var(--divider);color:var(--muted);font-size:.9rem}
 .grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:1rem}
 @media (max-width:960px){.grid-2{grid-template-columns:1fr}}
+.btn{display:inline-flex;align-items:center;gap:.5rem;border-radius:999px;padding:.9rem 1.15rem;font-weight:700;background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#1a1a1a;border:0;cursor:pointer;box-shadow:var(--shadow);transition:transform .15s ease,filter .2s ease}
+.btn:hover{transform:translateY(-1px);filter:saturate(1.08)}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--divider);box-shadow:none}
 footer{padding:3rem 0 4rem 0;border-top:1px solid var(--divider);color:var(--muted)}
 .anchor{scroll-margin-top:88px}
-.active{border-color:var(--gold);background:rgba(212,175,55,.14)}
+.small{font-size:.9rem;color:var(--muted)}
 </style>
 </head>
 <body>
 <nav>
   <div class="container navbar">
-    <a href="index.html" class="brand">
-      <span class="logo">JH</span>
+    <a href="./index.html" class="brand">
+      <img src="assets/images/logo.png" alt="JHS VEX logo" />
       <span>Jordan HS VEX Robotics</span>
     </a>
-    <button class="btn ghost menu-btn" aria-label="Menu" onclick="toggleMenu()">Menu</button>
     <ul id="menu">
-      <li><a class="link active" href="index.html">Home</a></li>
-      <li><a class="link" href="teams.html">Teams</a></li>
-      <li><a class="link" href="awards.html">Accomplishments</a></li>
-      <li><a class="link" href="members.html">Members</a></li>
-      <li><a class="link" href="officers.html">Officers</a></li>
-      <li><a class="link" href="contact.html">Contact</a></li>
+      <li><a class="link active" href="./index.html">Home</a></li>
+      <li><a class="link" href="./teams.html">Teams</a></li>
+      <li><a class="link" href="./awards.html">Accomplishments</a></li>
+      <li><a class="link" href="./members.html">Members</a></li>
+      <li><a class="link" href="./officers.html">Officers</a></li>
+      <li><a class="link" href="./contact.html">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -106,8 +82,8 @@ footer{padding:3rem 0 4rem 0;border-top:1px solid var(--divider);color:var(--mut
       <div class="kpi"><div class="v">Worlds</div><div class="t small">Z and W qualified</div></div>
     </div>
     <div style="margin-top:1rem" class="cta">
-      <a href="teams.html" class="btn">View Teams</a>
-      <a href="awards.html" class="btn ghost">See Accomplishments</a>
+      <a href="./teams.html" class="btn">View Teams</a>
+      <a href="./awards.html" class="btn ghost">See Accomplishments</a>
     </div>
   </div>
 </header>
@@ -145,28 +121,14 @@ footer{padding:3rem 0 4rem 0;border-top:1px solid var(--divider);color:var(--mut
 <footer>
   <div class="container">
     <div class="grid-2">
-      <div>
-        <div class="brand"><span class="logo">JH</span><span>Jordan HS VEX Robotics</span></div>
-        <p class="small">Copyright © <span id="year"></span> JHS VEX</p>
-      </div>
-      <div>
-        <ul class="inline" style="justify-content:flex-end">
-          <li><a href="teams.html">Teams</a></li>
-          <li><a href="awards.html">Accomplishments</a></li>
-          <li><a href="members.html">Members</a></li>
-          <li><a href="officers.html">Officers</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+      <div class="brand"><img src="assets/images/logo.png" alt="JHS VEX logo" /><span>Jordan HS VEX Robotics</span></div>
+      <div style="text-align:right">
+        <p class="small">© <span id="year"></span> JHS VEX</p>
+        <p class="small">Web Dev Team: Dillon Mehta and Aarav Bolineni</p>
       </div>
     </div>
   </div>
 </footer>
-
-<script>
-const menu=document.getElementById("menu")
-function toggleMenu(){menu.classList.toggle("show")}
-window.addEventListener("click",e=>{if(!e.target.closest("nav"))menu.classList.remove("show")})
-document.getElementById("year").textContent=new Date().getFullYear()
-</script>
+<script>document.getElementById("year").textContent=new Date().getFullYear()</script>
 </body>
 </html>
