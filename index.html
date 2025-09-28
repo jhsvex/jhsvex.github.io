@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>JHS VEX Robotics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#0b0d12;
+  --panel:#10131a;
+  --muted:#c9ced6;
+  --text:#eef2f6;
+  --brand:#66d9e8;
+  --brand-2:#94d82d;
+  --accent:#ffd43b;
+  --danger:#ff6b6b;
+  --ok:#51cf66;
+  --divider:rgba(255,255,255,.08);
+  --shadow:0 8px 24px rgba(0,0,0,.25);
+  --radius:16px
+}
+@media (prefers-color-scheme:light){
+  :root{
+    --bg:#f7f9fc;
+    --panel:#ffffff;
+    --muted:#3b4150;
+    --text:#0b1020;
+    --divider:rgba(0,0,0,.08);
+    --shadow:0 8px 24px rgba(10,20,40,.08)
+  }
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif;
+  background:radial-gradient(1200px 600px at 85% -10%, rgba(102,217,232,.18), transparent 60%), radial-gradient(900px 500px at -10% 20%, rgba(148,216,45,.14), transparent 60%), var(--bg);
+  color:var(--text);
+  line-height:1.6
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(1100px,92vw);margin:0 auto}
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  border-radius:999px;padding:.85rem 1.1rem;font-weight:600;
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#081017;
+  border:0;cursor:pointer;box-shadow:var(--shadow);transition:transform .15s ease,filter .2s ease
+}
+.btn:hover{transform:translateY(-1px);filter:saturate(1.1)}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--divider);box-shadow:none}
+.badge{
+  display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.02em;
+  padding:.35rem .6rem;border-radius:999px;background:rgba(148,216,45,.15);color:var(--brand-2)
+}
+nav{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:saturate(1.2) blur(10px);
+  background:color-mix(in hsl, var(--panel) 70%, transparent);
+  border-bottom:1px solid var(--divider)
+}
+.navbar{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:.8rem;font-weight:800;font-size:1.05rem;letter-spacing:.02em}
+.logo{
+  width:36px;height:36px;display:grid;place-items:center;border-radius:12px;
+  background:conic-gradient(from 120deg, var(--brand), var(--brand-2), var(--brand));
+  color:#081017;font-weight:900
+}
+nav ul{display:flex;gap:1rem;list-style:none;padding:0;margin:0}
+nav a.link{padding:.6rem .8rem;border-radius:999px;border:1px solid transparent}
+nav a.link:hover{background:rgba(255,255,255,.04);border-color:var(--divider)}
+.menu-btn{display:none}
+@media (max-width:880px){
+  .menu-btn{display:inline-flex}
+  nav ul{position:fixed;inset:72px 0 auto 0;background:var(--panel);border-bottom:1px solid var(--divider);flex-direction:column;gap:0;padding:.6rem;transform:translateY(-120%);transition:transform .25s ease}
+  nav ul.show{transform:translateY(0)}
+  nav a.link{padding:1rem 1.2rem;border-radius:12px}
+}
+.hero{
+  padding:6rem 0 3rem 0;position:relative;overflow:hidden
+}
+.hero .grid{
+  display:grid;grid-template-columns:1.25fr .95fr;gap:3rem;align-items:center
+}
+@media (max-width:960px){
+  .hero .grid{grid-template-columns:1fr;gap:2rem}
+}
+h1{font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.12;margin:0}
+.lead{font-size:1.05rem;color:var(--muted);max-width:60ch}
+.hero-card{
+  background:linear-gradient(180deg, color-mix(in hsl, var(--panel) 85%, transparent), color-mix(in hsl, var(--panel) 95%, transparent));
+  border:1px solid var(--divider);border-radius:var(--radius);padding:1.2rem;box-shadow:var(--shadow)
+}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+.kpi{padding:1rem;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid var(--divider);text-align:center}
+.kpi .v{font-size:1.6rem;font-weight:800}
+.section{padding:3.5rem 0;border-top:1px solid var(--divider)}
+.section h2{font-size:1.8rem;margin:0 0 .4rem 0}
+.section p.sub{color:var(--muted);margin:.2rem 0 1.4rem 0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media (max-width:960px){.cards{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--divider);border-radius:var(--radius);padding:1.1rem;box-shadow:var(--shadow)}
+.card h3{margin:.2rem 0 .4rem 0}
+.tag{display:inline-flex;align-items:center;gap:.35rem;padding:.35rem .55rem;border:1px solid var(--divider);border-radius:999px;font-size:.85rem;color:var(--muted)}
+.grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:1rem}
+@media (max-width:960px){.grid-2{grid-template-columns:1fr}}
+.table{width:100%;border-collapse:collapse;border-spacing:0}
+.table th,.table td{border-bottom:1px solid var(--divider);padding:.9rem .7rem;text-align:left}
+.table th{color:var(--muted);font-weight:600}
+.sponsor-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:.8rem;align-items:center}
+@media (max-width:880px){.sponsor-strip{grid-template-columns:repeat(3,1fr)}}
+.sponsor{
+  height:64px;border-radius:12px;border:1px dashed var(--divider);display:grid;place-items:center;background:rgba(255,255,255,.02)
+}
+footer{padding:3rem 0 4rem 0;border-top:1px solid var(--divider);color:var(--muted)}
+.input, select{
+  width:100%;padding:.9rem 1rem;border-radius:12px;border:1px solid var(--divider);
+  background:var(--panel);color:var(--text)
+}
+form .row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+@media (max-width:720px){form .row{grid-template-columns:1fr}}
+.cta{
+  display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.2rem
+}
+.small{font-size:.9rem;color:var(--muted)}
+hr.sep{border:0;border-top:1px dashed var(--divider);margin:1.2rem 0}
+ul.inline{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0;list-style:none}
+ul.inline li{padding:.35rem .6rem;border-radius:999px;border:1px solid var(--divider);color:var(--muted);font-size:.9rem}
+.figure{
+  width:100%;aspect-ratio:16/10;border-radius:16px;border:1px solid var(--divider);
+  background:
+    radial-gradient(200px 200px at 80% 20%, rgba(102,217,232,.25), transparent 60%),
+    radial-gradient(240px 200px at 20% 70%, rgba(148,216,45,.25), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.04));
+  box-shadow:var(--shadow);display:grid;place-items:center;font-weight:800;letter-spacing:.1em;color:color-mix(in hsl, var(--text) 75%, var(--muted))
+}
+.anchor{scroll-margin-top:88px}
+html{scroll-behavior:smooth}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container navbar">
+    <a href="#" class="brand">
+      <span class="logo">JZ</span>
+      <span>Jordan HS VEX Robotics</span>
+    </a>
+    <button class="btn ghost menu-btn" aria-label="Menu" onclick="toggleMenu()">Menu</button>
+    <ul id="menu">
+      <li><a class="link" href="#about">About</a></li>
+      <li><a class="link" href="#teams">Teams</a></li>
+      <li><a class="link" href="#season">Season</a></li>
+      <li><a class="link" href="#awards">Awards</a></li>
+      <li><a class="link" href="#sponsors">Sponsors</a></li>
+      <li><a class="link" href="#join">Join</a></li>
+      <li><a class="link" href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container grid">
+    <div>
+      <span class="badge">JHS VEX Robotics</span>
+      <h1>Robots that win, teams that grow, leaders that build community</h1>
+      <p class="lead">We design, program, and compete with tournament ready robots while mentoring new builders and coders at Jordan High School. This is the home for news, teams, schedules, sponsors, and ways to get involved.</p>
+      <div class="cta">
+        <a href="#join" class="btn">Apply to Join</a>
+        <a href="#season" class="btn ghost">View Season</a>
+      </div>
+      <ul class="inline" style="margin-top:1rem">
+        <li>Texas UIL 6A State Champion</li>
+        <li>6x Worlds Qualified</li>
+        <li>38+ Awards</li>
+      </ul>
+    </div>
+    <div class="hero-card">
+      <div class="figure">JHS • VEX</div>
+      <hr class="sep" />
+      <div class="kpis">
+        <div class="kpi">
+          <div class="v">8</div>
+          <div class="t small">active teams</div>
+        </div>
+        <div class="kpi">
+          <div class="v">60+</div>
+          <div class="t small">student members</div>
+        </div>
+        <div class="kpi">
+          <div class="v">2019</div>
+          <div class="t small">founded</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="section anchor">
+  <div class="container grid-2">
+    <div>
+      <h2>About</h2>
+      <p class="sub">Student run program focused on engineering excellence, mentorship, and competition results.</p>
+      <div class="card">
+        <h3>What we do</h3>
+        <p>Plan, prototype, and test robots for the VEX V5 competition game. Members learn design, fabrication, control theory, and software. Veterans mentor rookies to grow capability across the club.</p>
+        <hr class="sep" />
+        <ul class="inline">
+          <li>mechanical design</li>
+          <li>embedded programming</li>
+          <li>sensors and control</li>
+          <li>strategy and scouting</li>
+          <li>outreach</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="cards">
+        <div class="card">
+          <span class="tag">Workspace</span>
+          <h3>Build Lab</h3>
+          <p>Benchtop layout with stock control, shared tools, and inspection checks before practice runs.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Practice</span>
+          <h3>Field</h3>
+          <p>Regulation field for driver practice and autonomous testing with routine maintenance logs.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Mentorship</span>
+          <h3>Rookie Pods</h3>
+          <p>Small groups led by veterans to speed up onboarding for CAD, programming, and match prep.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="teams" class="section anchor">
+  <div class="container">
+    <h2>Teams</h2>
+    <p class="sub">Competitive roster for the current season. Team pages can live here later.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>19697Z</h3>
+        <p>Flagship team focused on clean mechanical execution and consistent autonomous scoring.</p>
+        <ul class="inline" style="margin-top:.6rem">
+          <li>captain</li><li>builder</li><li>programmer</li><li>driver</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>19697A</h3>
+        <p>Fast cycle strategy with iterative tuning for match to match reliability.</p>
+        <ul class="inline" style="margin-top:.6rem">
+          <li>lead</li><li>scout</li><li>notebook</li><li>drive coach</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>19697B</h3>
+        <p>Rising team with strong coding pipeline and autonomous path planning.</p>
+        <ul class="inline" style="margin-top:.6rem">
+          <li>controls</li><li>sensors</li><li>mech</li><li>strategy</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="season" class="section anchor">
+  <div class="container">
+    <h2>Season</h2>
+    <p class="sub">Key dates and events. Replace placeholders with your calendar.</p>
+    <div class="card">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Event</th>
+            <th>Location</th>
+            <th>Teams</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="season-body">
+          <tr>
+            <td>Oct 12</td>
+            <td>Houston Regional Qualifier</td>
+            <td>Houston TX</td>
+            <td>Z A B</td>
+            <td>Registered</td>
+          </tr>
+          <tr>
+            <td>Nov 09</td>
+            <td>Austin Fall Classic</td>
+            <td>Austin TX</td>
+            <td>Z A</td>
+            <td>Planned</td>
+          </tr>
+          <tr>
+            <td>Dec 07</td>
+            <td>Katy Invitational</td>
+            <td>Katy TX</td>
+            <td>All</td>
+            <td>Hosting</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="cta">
+        <a href="#contact" class="btn">Add to Calendar</a>
+        <button class="btn ghost" onclick="shuffleSeason()">Shuffle Demo</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="awards" class="section anchor">
+  <div class="container">
+    <h2>Awards</h2>
+    <p class="sub">Highlights from recent seasons.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Texas UIL 6A State Champion</h3>
+        <p>Top performance with strong autonomous, consistent cycles, and durable design.</p>
+      </div>
+      <div class="card">
+        <h3>Excellence Award</h3>
+        <p>Notebook quality, interviews, and match consistency across the full season.</p>
+      </div>
+      <div class="card">
+        <h3>Worlds Qualifications</h3>
+        <p>Six appearances with playoff runs and skills rank improvements year over year.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sponsors" class="section anchor">
+  <div class="container">
+    <h2>Sponsors</h2>
+    <p class="sub">Partners who power our season. Add logos here.</p>
+    <div class="sponsor-strip">
+      <div class="sponsor">Your Logo</div>
+      <div class="sponsor">Your Logo</div>
+      <div class="sponsor">Your Logo</div>
+      <div class="sponsor">Your Logo</div>
+      <div class="sponsor">Your Logo</div>
+      <div class="sponsor">Your Logo</div>
+    </div>
+    <div class="cta" style="margin-top:1rem">
+      <a href="#contact" class="btn">Become a Sponsor</a>
+      <a href="#" class="btn ghost">Download Sponsor Kit</a>
+    </div>
+  </div>
+</section>
+
+<section id="join" class="section anchor">
+  <div class="container grid-2">
+    <div>
+      <h2>Join</h2>
+      <p class="sub">Applications open before the fall season. Interest form stays open year round.</p>
+      <div class="card">
+        <h3>Tracks</h3>
+        <ul class="inline" style="margin-top:.4rem">
+          <li>build</li><li>software</li><li>controls</li><li>scouting</li><li>media</li><li>ops</li>
+        </ul>
+        <hr class="sep" />
+        <p class="small">Members rotate across tasks so every builder understands code outputs and every programmer understands system constraints.</p>
+        <div class="cta">
+          <a href="#" class="btn">Open Interest Form</a>
+          <a href="#contact" class="btn ghost">Ask a Question</a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <h3>Requirements</h3>
+        <ul class="inline" style="margin-top:.4rem">
+          <li>good standing</li><li>time commitment</li><li>team mindset</li><li>learn by doing</li>
+        </ul>
+        <hr class="sep" />
+        <p class="small">No experience needed. We teach CAD, code, and match flow through rookie pods, labs, and field sessions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section anchor">
+  <div class="container grid-2">
+    <div>
+      <h2>Contact</h2>
+      <p class="sub">Reach the officer team for partnerships, demos, or general info.</p>
+      <form id="contact-form" onsubmit="sendMail(event)">
+        <div class="row">
+          <input class="input" name="name" placeholder="Your name" required />
+          <input class="input" name="email" type="email" placeholder="Your email" required />
+        </div>
+        <div class="row" style="margin-top:.8rem">
+          <select name="topic" class="input" required>
+            <option value="" disabled selected>Topic</option>
+            <option>Sponsorship</option>
+            <option>School Event Demo</option>
+            <option>Media Request</option>
+            <option>Join the Club</option>
+            <option>Other</option>
+          </select>
+          <input class="input" name="subject" placeholder="Subject" required />
+        </div>
+        <div style="margin-top:.8rem">
+          <textarea class="input" name="message" rows="6" placeholder="Message" required></textarea>
+        </div>
+        <div class="cta">
+          <button class="btn" type="submit">Send</button>
+          <span id="sent" class="small" style="display:none">Opening your mail app</span>
+        </div>
+      </form>
+    </div>
+    <div>
+      <div class="card">
+        <h3>Links</h3>
+        <ul class="inline" style="margin-top:.4rem">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">Discord</a></li>
+        </ul>
+        <hr class="sep" />
+        <h3>Address</h3>
+        <p class="small">Jordan High School, Katy ISD, Katy TX</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="grid-2">
+      <div>
+        <div class="brand">
+          <span class="logo">JZ</span>
+          <span>Jordan HS VEX Robotics</span>
+        </div>
+        <p class="small">Copyright © <span id="year"></span> JHS VEX. All rights reserved.</p>
+      </div>
+      <div>
+        <ul class="inline" style="justify-content:flex-end">
+          <li><a href="#about">About</a></li>
+          <li><a href="#teams">Teams</a></li>
+          <li><a href="#season">Season</a></li>
+          <li><a href="#sponsors">Sponsors</a></li>
+          <li><a href="#join">Join</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const menu=document.getElementById("menu")
+function toggleMenu(){menu.classList.toggle("show")}
+window.addEventListener("click",e=>{if(!e.target.closest("nav"))menu.classList.remove("show")})
+document.getElementById("year").textContent=new Date().getFullYear()
+function shuffleSeason(){
+  const body=document.getElementById("season-body")
+  const rows=[...body.querySelectorAll("tr")]
+  for(let i=rows.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1))
+    body.insertBefore(rows[j],rows[i])
+  }
+}
+function sendMail(e){
+  e.preventDefault()
+  const f=e.target
+  const name=encodeURIComponent(f.name.value.trim())
+  const email=encodeURIComponent(f.email.value.trim())
+  const topic=encodeURIComponent(f.topic.value)
+  const subject=encodeURIComponent(f.subject.value.trim())
+  const msg=encodeURIComponent(f.message.value.trim()+"\n\nFrom: "+decodeURIComponent(name)+" <"+decodeURIComponent(email)+">")
+  const mailto="mailto:jhsvex@example.org?subject="+subject+"%20%7C%20"+topic+"&body="+msg
+  document.getElementById("sent").style.display="inline"
+  window.location.href=mailto
+}
+</script>
+</body>
+</html>
