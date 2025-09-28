@@ -16,7 +16,7 @@ a{color:inherit;text-decoration:none}
 nav{position:sticky;top:0;z-index:50;background:color-mix(in hsl, var(--panel) 85%, transparent);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid var(--divider)}
 .navbar{display:flex;align-items:center;justify-content:space-between;height:72px}
 .brand{display:flex;align-items:center;gap:.8rem;font-weight:800}
-.logo{width:36px;height:36px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#1a1a1a;font-weight:900}
+.brand img{width:36px;height:36px;border-radius:12px;object-fit:cover;background:#222}
 nav ul{display:flex;gap:.6rem;list-style:none;padding:0;margin:0}
 nav a.link{padding:.55rem .8rem;border-radius:999px;border:1px solid transparent}
 nav a.link:hover{background:rgba(255,255,255,.06);border-color:var(--divider)}
@@ -24,26 +24,28 @@ nav a.link:hover{background:rgba(255,255,255,.06);border-color:var(--divider)}
 .section{padding:2.4rem 0}
 h1{font-size:clamp(1.8rem,4vw,2.4rem);margin:1.2rem 0}
 .card{background:var(--panel);border:1px solid var(--divider);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow)}
+.badge{display:inline-block;font-size:.85rem;font-weight:800;padding:.35rem .6rem;border-radius:999px;background:rgba(212,175,55,.2);color:var(--gold)}
+ul.inline{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0;list-style:none}
+ul.inline li{padding:.35rem .6rem;border-radius:999px;border:1px solid var(--divider);color:var(--muted);font-size:.9rem}
 details{border:1px solid var(--divider);border-radius:12px;background:rgba(255,255,255,.03);padding:1rem}
 summary{cursor:pointer;font-weight:800;color:var(--gold)}
 .table{width:100%;border-collapse:collapse;border-spacing:0}
 .table th,.table td{border-bottom:1px solid var(--divider);padding:.85rem .6rem;text-align:left;vertical-align:top}
 .table th{color:var(--muted);font-weight:600}
-ul.inline{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0;list-style:none}
-ul.inline li{padding:.35rem .6rem;border-radius:999px;border:1px solid var(--divider);color:var(--muted);font-size:.9rem}
+.small{color:var(--muted)}
 </style>
 </head>
 <body>
 <nav>
   <div class="container navbar">
-    <a href="index.html" class="brand"><span class="logo">JH</span><span>Jordan HS VEX Robotics</span></a>
+    <a href="./index.html" class="brand"><img src="assets/images/logo.png" alt="JHS VEX logo" /><span>Jordan HS VEX Robotics</span></a>
     <ul id="menu">
-      <li><a class="link" href="index.html">Home</a></li>
-      <li><a class="link" href="teams.html">Teams</a></li>
-      <li><a class="link active" href="awards.html">Accomplishments</a></li>
-      <li><a class="link" href="members.html">Members</a></li>
-      <li><a class="link" href="officers.html">Officers</a></li>
-      <li><a class="link" href="contact.html">Contact</a></li>
+      <li><a class="link" href="./index.html">Home</a></li>
+      <li><a class="link" href="./teams.html">Teams</a></li>
+      <li><a class="link active" href="./awards.html">Accomplishments</a></li>
+      <li><a class="link" href="./members.html">Members</a></li>
+      <li><a class="link" href="./officers.html">Officers</a></li>
+      <li><a class="link" href="./contact.html">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -52,68 +54,33 @@ ul.inline li{padding:.35rem .6rem;border-radius:999px;border:1px solid var(--div
   <div class="container">
     <h1>Accomplishments</h1>
 
-    <details open>
-      <summary>All accomplishments with links</summary>
-      <div class="card" style="margin-top:1rem">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Team</th>
-              <th>Event</th>
-              <th>Award</th>
-              <th>Qualifies</th>
-              <th>Link</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>19697Z</td><td>Texan Standoff</td><td>Innovate Award</td><td></td><td><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-6955.html#awards">details</a></td></tr>
-            <tr><td>19697Z</td><td>Katy Winter Classic</td><td>Excellence Award, Tournament Finalists</td><td>Region Championship, UIL</td><td><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-8514.html#awards">details</a></td></tr>
-            <tr><td>19697Z</td><td>Onalaska HS/MS</td><td>Tournament Champions, Innovate Award</td><td>Region Championship, UIL</td><td><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-6869.html#awards">details</a></td></tr>
-            <tr><td>19697Z</td><td>RECF UIL Texas 6A</td><td>Tournament Champions</td><td></td><td><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-8511.html#awards">details</a></td></tr>
-            <tr><td>19697Z</td><td>Region 3 Championship</td><td>Excellence Award</td><td>World Championship</td><td><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-8507.html#awards">details</a></td></tr>
-
-            <tr><td>19697A</td><td>Katy Battle of the Bots</td><td>Design Award</td><td></td><td><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-7919.html#awards">details</a></td></tr>
-            <tr><td>19697A</td><td>Katy Winter Classic</td><td>Design Award</td><td></td><td><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-8514.html#awards">details</a></td></tr>
-            <tr><td>19697A</td><td>Katy Gobbler Games</td><td>Excellence Award, Tournament Finalists</td><td>Region Championship, UIL</td><td><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-8879.html#awards">details</a></td></tr>
-            <tr><td>19697A</td><td>Cy Ridge Open</td><td>Judges Award</td><td></td><td><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-6665.html#awards">details</a></td></tr>
-            <tr><td>19697A</td><td>USTEM Holiday High Stakes</td><td>Excellence Award</td><td>Region Championship</td><td><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-7225.html#awards">details</a></td></tr>
-            <tr><td>19697A</td><td>Katy Ring in the Year</td><td>Design Award</td><td></td><td><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-9143.html#awards">details</a></td></tr>
-            <tr><td>19697A</td><td>Bridgeland Open</td><td>Tournament Finalists</td><td>UIL</td><td><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-6565.html#awards">details</a></td></tr>
-
-            <tr><td>19697W</td><td>Onalaska HS/MS</td><td>Tournament Finalists</td><td>UIL</td><td><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-6869.html#awards">details</a></td></tr>
-            <tr><td>19697W</td><td>Katy Ring in the Year</td><td>Tournament Finalists</td><td>UIL</td><td><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-9143.html#awards">details</a></td></tr>
-            <tr><td>19697W</td><td>Bridgeland Open</td><td>Judges Award</td><td></td><td><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-6565.html#awards">details</a></td></tr>
-            <tr><td>19697W</td><td>RECF UIL Texas 6A</td><td>Tournament Semifinalists</td><td></td><td><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-8511.html#awards">details</a></td></tr>
-            <tr><td>19697W</td><td>Katy Powwow</td><td>Design Award</td><td>Region Championship</td><td><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-9227.html#awards">details</a></td></tr>
-            <tr><td>19697W</td><td>Region 3 Championship</td><td>Tournament Semifinalists</td><td>World Championship</td><td><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-8507.html#awards">details</a></td></tr>
-
-            <tr><td>19697X</td><td>USTEM Holiday High Stakes</td><td>Innovate Award</td><td></td><td><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-7225.html#awards">details</a></td></tr>
-            <tr><td>19697X</td><td>Bridgeland Open</td><td>Design Award</td><td>Region Championship</td><td><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-6565.html#awards">details</a></td></tr>
-
-            <tr><td>19697M</td><td>Winter Is Coming Skills</td><td>Robot Skills 3rd</td><td>Region Championship, UIL</td><td><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-7239.html#awards">details</a></td></tr>
-            <tr><td>19697M</td><td>New Year New Drive</td><td>Tournament Finalists</td><td></td><td><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-9266.html#awards">details</a></td></tr>
-            <tr><td>19697M</td><td>Aggieland Classic 2025</td><td>Tournament Champions, Build Award</td><td>Region Championship</td><td><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-9439.html#awards">details</a></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </details>
-
-    <div class="card" style="margin-top:1rem">
-      <h2>Highlights</h2>
+    <div class="card">
+      <h2>Big four</h2>
       <ul class="inline" style="margin-top:.6rem">
-        <li>UIL 6A State Champions</li>
-        <li>Six Worlds qualifications</li>
-        <li>Houston Regional Excellence Award</li>
+        <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-8511.html#awards">UIL 6A State Champions • 19697Z</a></li>
+        <li>World Championship Qualifications • 19697Z and 19697W</li>
+        <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-8507.html#awards">Region 3 Championship Excellence Award • 19697Z</a></li>
+        <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-8514.html#awards">Houston Regional Excellence Award • 19697Z</a></li>
       </ul>
     </div>
+
+    <details style="margin-top:1rem" open>
+      <summary>Summary of additional awards</summary>
+      <div class="card" style="margin-top:1rem">
+        <p class="small">Twenty plus additional awards across all teams, including Tournament Champions, Design and Innovate Awards, Robot Skills podiums, Judges Awards, and multiple Tournament Finalist and Semifinalist finishes. See the Teams page for complete lists by team with links.</p>
+      </div>
+    </details>
 
   </div>
 </main>
 
 <footer class="section" style="padding-top:1.2rem">
-  <div class="container" style="border-top:1px solid var(--divider);padding-top:1.2rem;color:var(--muted)">
-    <div class="brand"><span class="logo">JH</span><span>Jordan HS VEX Robotics</span></div>
-    <p class="small">© <span id="year"></span> JHS VEX</p>
+  <div class="container" style="border-top:1px solid var(--divider);padding-top:1.2rem;color:var(--muted);display:flex;align-items:center;justify-content:space-between">
+    <div class="brand"><img src="assets/images/logo.png" alt="JHS VEX logo" /><span>Jordan HS VEX Robotics</span></div>
+    <div style="text-align:right">
+      <p class="small">© <span id="year"></span> JHS VEX</p>
+      <p class="small">Web Dev Team: Dillon Mehta and Aarav Bolineni</p>
+    </div>
   </div>
 </footer>
 <script>document.getElementById("year").textContent=new Date().getFullYear()</script>
