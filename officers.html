@@ -16,30 +16,33 @@ a{color:inherit;text-decoration:none}
 nav{position:sticky;top:0;z-index:50;background:color-mix(in hsl, var(--panel) 85%, transparent);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid var(--divider)}
 .navbar{display:flex;align-items:center;justify-content:space-between;height:72px}
 .brand{display:flex;align-items:center;gap:.8rem;font-weight:800}
-.logo{width:36px;height:36px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#1a1a1a;font-weight:900}
+.brand img{width:36px;height:36px;border-radius:12px;object-fit:cover;background:#222}
 nav ul{display:flex;gap:.6rem;list-style:none;padding:0;margin:0}
 nav a.link{padding:.55rem .8rem;border-radius:999px;border:1px solid transparent}
 nav a.link:hover{background:rgba(255,255,255,.06);border-color:var(--divider)}
 .active{border-color:var(--gold);background:rgba(212,175,55,.14)}
 .section{padding:2.4rem 0}
 h1{font-size:clamp(1.8rem,4vw,2.4rem);margin:1.2rem 0}
-.card{background:var(--panel);border:1px solid var(--divider);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow)}
-.table{width:100%;border-collapse:collapse;border-spacing:0}
-.table th,.table td{border-bottom:1px solid var(--divider);padding:.85rem .6rem;text-align:left;vertical-align:top}
-.table th{color:var(--muted);font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media (max-width:960px){.grid{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--divider);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow);display:flex;gap:1rem;align-items:center}
+.card img{width:84px;height:84px;border-radius:12px;object-fit:cover;background:#222;border:1px solid var(--divider)}
+.role{font-weight:800;color:var(--gold)}
+.small{color:var(--muted)}
+footer{border-top:1px solid var(--divider);color:var(--muted);padding:1.2rem 0 2.4rem 0}
 </style>
 </head>
 <body>
 <nav>
   <div class="container navbar">
-    <a href="index.html" class="brand"><span class="logo">JH</span><span>Jordan HS VEX Robotics</span></a>
+    <a href="./index.html" class="brand"><img src="assets/images/logo.png" alt="JHS VEX logo" /><span>Jordan HS VEX Robotics</span></a>
     <ul id="menu">
-      <li><a class="link" href="index.html">Home</a></li>
-      <li><a class="link" href="teams.html">Teams</a></li>
-      <li><a class="link" href="awards.html">Accomplishments</a></li>
-      <li><a class="link" href="members.html">Members</a></li>
-      <li><a class="link active" href="officers.html">Officers</a></li>
-      <li><a class="link" href="contact.html">Contact</a></li>
+      <li><a class="link" href="./index.html">Home</a></li>
+      <li><a class="link" href="./teams.html">Teams</a></li>
+      <li><a class="link" href="./awards.html">Accomplishments</a></li>
+      <li><a class="link" href="./members.html">Members</a></li>
+      <li><a class="link active" href="./officers.html">Officers</a></li>
+      <li><a class="link" href="./contact.html">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -47,26 +50,70 @@ h1{font-size:clamp(1.8rem,4vw,2.4rem);margin:1.2rem 0}
 <main class="section">
   <div class="container">
     <h1>Officers</h1>
-    <div class="card">
-      <table class="table">
-        <thead><tr><th>Name</th><th>Role</th><th>Team</th></tr></thead>
-        <tbody>
-          <tr><td>Dillon Mehta</td><td>President and Co-Founder</td><td>19697Z</td></tr>
-          <tr><td>Aarav Bolineni</td><td>VP Build</td><td>19697Z</td></tr>
-          <tr><td>Suchay Kommisetty</td><td>VP Code</td><td>19697Z</td></tr>
-          <tr><td>Rishan Hemrajani</td><td>Treasurer</td><td>19697Z</td></tr>
-          <tr><td>Muhammad Daniyal Salman</td><td>Secretary</td><td>19697W</td></tr>
-          <tr><td>Advay Arashanapalli</td><td>Outreach Officer</td><td>19697S</td></tr>
-        </tbody>
-      </table>
+
+    <div class="grid">
+
+      <div class="card">
+        <img src="assets/images/officers/dillon-mehta.jpg" alt="Dillon Mehta" />
+        <div>
+          <div class="role">President and Co-Founder</div>
+          <div>Dillon Mehta • Team 19697Z</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/officers/aarav-bolineni.jpg" alt="Aarav Bolineni" />
+        <div>
+          <div class="role">VP Build</div>
+          <div>Aarav Bolineni • Team 19697Z</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/officers/suchay-kommisetty.jpg" alt="Suchay Kommisetty" />
+        <div>
+          <div class="role">VP Code</div>
+          <div>Suchay Kommisetty • Team 19697Z</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/officers/rishan-hemrajani.jpg" alt="Rishan Hemrajani" />
+        <div>
+          <div class="role">Treasurer</div>
+          <div>Rishan Hemrajani • Team 19697Z</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/officers/muhammad-daniyal-salman.jpg" alt="Muhammad Daniyal Salman" />
+        <div>
+          <div class="role">Secretary</div>
+          <div>Muhammad Daniyal Salman • Team 19697W</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/officers/advay-arashanapalli.jpg" alt="Advay Arashanapalli" />
+        <div>
+          <div class="role">Outreach Officer</div>
+          <div>Advay Arashanapalli • Team 19697S</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </main>
 
-<footer class="section" style="padding-top:1.2rem">
-  <div class="container" style="border-top:1px solid var(--divider);padding-top:1.2rem;color:var(--muted)">
-    <div class="brand"><span class="logo">JH</span><span>Jordan HS VEX Robotics</span></div>
-    <p class="small">© <span id="year"></span> JHS VEX</p>
+<footer>
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between">
+    <div class="brand" style="display:flex;align-items:center;gap:.6rem">
+      <img src="assets/images/logo.png" alt="JHS VEX logo" />
+      <span class="small">© <span id="year"></span> JHS VEX</span>
+    </div>
+    <div style="text-align:right">
+      <p class="small">Web Dev Team: Dillon Mehta and Aarav Bolineni</p>
+    </div>
   </div>
 </footer>
 <script>document.getElementById("year").textContent=new Date().getFullYear()</script>
