@@ -24,17 +24,11 @@ nav a.link:hover{background:rgba(255,255,255,.06);border-color:var(--divider)}
 .section{padding:2.4rem 0}
 h1{font-size:clamp(1.8rem,4vw,2.4rem);margin:1.2rem 0}
 .card{background:var(--panel);border:1px solid var(--divider);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow)}
-.grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:1rem}
-@media (max-width:960px){.grid-2{grid-template-columns:1fr}}
-.figure{border-radius:16px;border:1px solid var(--divider);overflow:hidden}
-.figure img{display:block;width:100%;height:auto}
+.badge{display:inline-block;font-size:.85rem;font-weight:800;padding:.35rem .6rem;border-radius:999px;background:rgba(212,175,55,.2);color:var(--gold)}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem}
+.gallery img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;border:1px solid var(--divider);background:#111}
 ul.inline{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0;list-style:none}
 ul.inline li{padding:.35rem .6rem;border-radius:999px;border:1px solid var(--divider);color:var(--muted);font-size:.9rem}
-details{border:1px solid var(--divider);border-radius:12px;background:rgba(255,255,255,.03);padding:1rem}
-summary{cursor:pointer;font-weight:800;color:var(--gold)}
-.table{width:100%;border-collapse:collapse;border-spacing:0}
-.table th,.table td{border-bottom:1px solid var(--divider);padding:.85rem .6rem;text-align:left;vertical-align:top}
-.table th{color:var(--muted);font-weight:600}
 .small{color:var(--muted)}
 </style>
 </head>
@@ -57,23 +51,19 @@ summary{cursor:pointer;font-weight:800;color:var(--gold)}
   <div class="container">
     <h1>Accomplishments</h1>
 
-    <div class="grid-2">
-      <div class="card">
-        <h2>Biggest accomplishments</h2>
-        <ul class="inline" style="margin-top:.6rem">
-          <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-8511.html#awards">UIL 6A State Champions</a></li>
-          <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-8514.html#awards">Houston Regional Excellence Award</a></li>
-          <li>8x Worlds qualifications</li>
-          <li>19x State qualifications (6x last season)</li>
-        </ul>
-      </div>
-      <div class="figure">
-        <img src="assets/images/accomplishments-1.jpg" alt="Team on field holding trophies" />
-      </div>
+    <div class="card">
+      <h2>Biggest accomplishments</h2>
+      <ul class="inline" style="margin-top:.6rem">
+        <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-8511.html#awards">UIL 6A State Champions</a></li>
+        <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/RE-V5RC-24-8514.html#awards">Houston Regional Excellence Award</a></li>
+        <li>8x World qualifications and appearances</li>
+        <li>19x State qualifications total • 6x last season</li>
+      </ul>
     </div>
 
-    <div class="figure" style="margin-top:1rem">
-      <img src="assets/images/accomplishments-2.jpg" alt="Club celebration photo" />
+    <div class="gallery" style="margin-top:1rem">
+      <img src="assets/images/awards-1.jpg" alt="Trophy celebration" />
+      <img src="assets/images/awards-2.jpg" alt="Team photo with awards" />
     </div>
 
   </div>
