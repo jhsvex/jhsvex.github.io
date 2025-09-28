@@ -26,10 +26,9 @@ h1{font-size:clamp(1.8rem,4vw,2.4rem);margin:1.2rem 0}
 .card{background:var(--panel);border:1px solid var(--divider);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow)}
 .btn{display:inline-flex;align-items:center;gap:.5rem;border-radius:999px;padding:.9rem 1.15rem;font-weight:700;background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#1a1a1a;border:0;cursor:pointer;box-shadow:var(--shadow);transition:transform .15s ease,filter .2s ease}
 .btn:hover{transform:translateY(-1px);filter:saturate(1.08)}
-.input, select, textarea{width:100%;padding:1rem;border-radius:12px;border:1px solid var(--divider);background:var(--panel);color:var(--text)}
-.grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:1rem}
-@media (max-width:960px){.grid-2{grid-template-columns:1fr}}
 .small{color:var(--muted)}
+.two{display:grid;grid-template-columns:1.1fr .9fr;gap:1rem}
+@media (max-width:960px){.two{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -48,7 +47,7 @@ h1{font-size:clamp(1.8rem,4vw,2.4rem);margin:1.2rem 0}
 </nav>
 
 <main class="section">
-  <div class="container grid-2">
+  <div class="container two">
     <div>
       <h1>Contact</h1>
       <div class="card">
@@ -58,17 +57,27 @@ h1{font-size:clamp(1.8rem,4vw,2.4rem);margin:1.2rem 0}
     </div>
     <div>
       <div class="card">
-        <h2>Social and team links</h2>
+        <h2>Socials</h2>
         <ul style="list-style:none;padding:0;margin:0;line-height:2">
-          <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/teams/V5RC/19697Z">19697Z on RobotEvents</a></li>
-          <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/teams/V5RC/19697W">19697W on RobotEvents</a></li>
-          <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/teams/V5RC/19697A">19697A on RobotEvents</a></li>
-          <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/teams/V5RC/19697M">19697M on RobotEvents</a></li>
-          <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/teams/V5RC/19697U">19697U on RobotEvents</a></li>
-          <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/teams/V5RC/19697X">19697X on RobotEvents</a></li>
-          <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/teams/V5RC/19697D">19697D on RobotEvents</a></li>
-          <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/teams/V5RC/19697S">19697S on RobotEvents</a></li>
-          <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/teams/V5RC/19697T">19697T on RobotEvents</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.instagram.com/jordanhsvex/">Jordan VEX Instagram</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.instagram.com/purgatory_19697w/">Purgatory 19697W Instagram</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.instagram.com/pyronauts_19697z/">Pyronauts 19697Z Instagram</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.instagram.com/playbotcarti_19697s/">Playbot Carti 19697S Instagram</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.instagram.com/phantomtroupe_19697a/">Phantom Troupe 19697A Instagram</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.instagram.com/carnage_19697m/">Carnage 19697M Instagram</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.instagram.com/pandamonium_19697u/">Pandamonium 19697U Instagram</a></li>
+        </ul>
+        <h2 style="margin-top:1rem">RobotEvents</h2>
+        <ul style="list-style:none;padding:0;margin:0;line-height:2">
+          <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/teams/V5RC/19697Z">19697Z</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/teams/V5RC/19697W">19697W</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/teams/V5RC/19697A">19697A</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/teams/V5RC/19697M">19697M</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/teams/V5RC/19697U">19697U</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/teams/V5RC/19697X">19697X</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/teams/V5RC/19697D">19697D</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/teams/V5RC/19697S">19697S</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.robotevents.com/teams/V5RC/19697T">19697T</a></li>
         </ul>
       </div>
     </div>
@@ -77,4 +86,13 @@ h1{font-size:clamp(1.8rem,4vw,2.4rem);margin:1.2rem 0}
 
 <footer class="section" style="padding-top:1.2rem">
   <div class="container" style="border-top:1px solid var(--divider);padding-top:1.2rem;color:var(--muted);display:flex;align-items:center;justify-content:space-between">
-    <div
+    <div class="brand"><img src="assets/images/logo.png" alt="JHS VEX logo" /><span>Jordan HS VEX Robotics</span></div>
+    <div style="text-align:right">
+      <p class="small">© <span id="year"></span> JHS VEX</p>
+      <p class="small">Web Dev Team: Dillon Mehta and Aarav Bolineni</p>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById("year").textContent=new Date().getFullYear()</script>
+</body>
+</html>
