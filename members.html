@@ -24,10 +24,12 @@ nav a.link:hover{background:rgba(255,255,255,.06);border-color:var(--divider)}
 .section{padding:2.4rem 0}
 h1{font-size:clamp(1.8rem,4vw,2.4rem);margin:1.2rem 0}
 .card{background:var(--panel);border:1px solid var(--divider);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow)}
+.hero-photo{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;border:1px solid var(--divider);background:#111;box-shadow:var(--shadow)}
 .table{width:100%;border-collapse:collapse;border-spacing:0}
 .table th,.table td{border-bottom:1px solid var(--divider);padding:.85rem .6rem;text-align:left;vertical-align:top}
 .table th{color:var(--muted);font-weight:600}
 .small{color:var(--muted)}
+footer{border-top:1px solid var(--divider);color:var(--muted);padding:1.2rem 0 2.4rem 0}
 </style>
 </head>
 <body>
@@ -48,7 +50,15 @@ h1{font-size:clamp(1.8rem,4vw,2.4rem);margin:1.2rem 0}
 <main class="section">
   <div class="container">
     <h1>Members</h1>
-    <div class="card">
+
+    <img class="hero-photo" src="assets/images/members-hero.jpg" alt="JHS VEX members group photo" />
+
+    <div class="card" style="margin-top:1rem">
+      <strong>Teacher Sponsor</strong>
+      <p class="small" style="margin:.4rem 0 0 0">Mr. William Goss</p>
+    </div>
+
+    <div class="card" style="margin-top:1rem">
       <table class="table">
         <thead><tr><th>Team</th><th>Members</th></tr></thead>
         <tbody>
@@ -63,14 +73,21 @@ h1{font-size:clamp(1.8rem,4vw,2.4rem);margin:1.2rem 0}
         </tbody>
       </table>
     </div>
+
+    <div class="card" style="margin-top:1rem">
+      <strong>Founders</strong>
+      <p class="small" style="margin:.4rem 0 0 0">Dillon Mehta; Siddharth Wani; Harshith Sadhu</p>
+    </div>
   </div>
 </main>
 
-<footer class="section" style="padding-top:1.2rem">
-  <div class="container" style="border-top:1px solid var(--divider);padding-top:1.2rem;color:var(--muted);display:flex;align-items:center;justify-content:space-between">
-    <div class="brand"><img src="assets/images/logo.png" alt="JHS VEX logo" /><span>Jordan HS VEX Robotics</span></div>
+<footer>
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between">
+    <div class="brand" style="display:flex;align-items:center;gap:.6rem">
+      <img src="assets/images/logo.png" alt="JHS VEX logo" />
+      <span class="small">© <span id="year"></span> JHS VEX</span>
+    </div>
     <div style="text-align:right">
-      <p class="small">© <span id="year"></span> JHS VEX</p>
       <p class="small">Web Dev Team: Dillon Mehta and Aarav Bolineni</p>
     </div>
   </div>
